@@ -1,0 +1,11 @@
+{
+	"name": "wiki-on-node",
+	"version": "0.0.1",
+	"author": "Alen Siljak <alen.siljak@gmail.com>",
+	"description": "Wiki implemented with node.js",
+	"repository": {
+    	"type": "git",
+    	"url": "https://github.com/MisterY/wiki-on-node"
+  	},
+  	"readmeFilename": "README.md"
+}
