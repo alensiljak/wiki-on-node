@@ -8,7 +8,7 @@ Wiki implemented with Node.js
 To run the wiki
 
 - Install harp with ```npm install -g harp```
-- Run ```harp server .``` from the wiki directory.
+- Run ```harp server``` from the wiki directory.
 
 ## Dependencies
 
