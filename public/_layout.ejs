@@ -4,7 +4,12 @@
     <link rel="stylesheet" type="text/css" href="/main.css" />
   </head>
   <body>
-    <header></header>
+    <header>
+      <%- partial("_shared/header") %>
+    </header>
     <%- yield %>
+    <footer>
+    	Footer
+    </footer>
   </body>
 </html>
