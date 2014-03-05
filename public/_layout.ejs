@@ -25,6 +25,57 @@
         }
       }
     %>
+
+        <div id="searchDiv">
+      <script>
+      var content = <%- JSON.stringify(public) %>;
+
+      function searchElement(root, searchTerm){
+
+        var result = [];
+
+        for(var name in root) {
+            // alert(name);
+            var value = root[name];
+            //alert(name + ": " + value);
+            if(typeof(value) === "object"){
+              var childResult = searchElement(value, searchTerm);
+              childResult.forEach(function(childElement){
+                result.push(childElement);
+              });
+            }
+
+            // search folder name
+            if(name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1){
+              result.push(name);
+            }
+
+            // search file names
+            if(typeof(value) === "string" && value.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1){
+              // found it.
+              result.push(value);
+            }
+        }
+
+        return result;
+      }
+
+      function search(root){
+          var searchTerm = document.getElementById('searchBox').value;
+        
+        var result = searchElement(root, searchTerm);
+        if(result.length > 0){
+          
+          //console.log(result);
+          var resultBox = document.getElementById("resultsBox");
+          resultsBox.innerHTML = result;
+        }
+
+      };
+    </script>
+      <input id="searchBox" type="text" onblur="search(content)" />
+      <div id="resultsBox"></div>
+    </div>
   </header>
     <%- yield %>
     <footer>
