@@ -5,11 +5,30 @@
   </head>
   <body>
     <header>
-      <%- partial("_shared/header") %>
-    </header>
+    <%
+      // Using Current object (http://harpjs.com/docs/development/current) for navigation:
+      // path length = current.path.length, 
+      // path (array): = current.path, 
+      // source: = current.source
+      // Any js can go in here. Even console.log().
+      
+      // Draw Home link if we are in sub directory.
+      if(current.path.length > 1 || (current.path.length == 1 && current.source != "index")){ %>
+        <a href="/">Home</a>
+      <% }
+      // Draw the path link(s).
+      for(var i = 0; i < current.path.length; i++){
+        if(current.path[i] != 'index'){
+          %>
+          &#8658; <a href="/<%= current.path[i] %>"><%= current.path[i] %></a>
+          <%
+        }
+      }
+    %>
+  </header>
     <%- yield %>
     <footer>
-    	Footer
+      <%- partial("_shared/footer") %>
     </footer>
   </body>
 </html>

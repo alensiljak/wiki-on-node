@@ -8,6 +8,8 @@ As you can see, everything works well. Or it doesn't.
 
 Links to [other documents](other) are available.
 
+You can also have documents in subdirectories, such as [this](subdirectory) one.
+
 # Harp
 
 Harp offers templating system using EJS and Jade. It supports content written in Markdown. Offers basic authentication for site protection.
