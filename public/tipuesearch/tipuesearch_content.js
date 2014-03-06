@@ -1,3 +1,4 @@
+
 var tipuesearch = {"pages": [
      {"title": "Tipue Search, a site search engine jQuery plugin", "text": "Tipue Search is a site search engine jQuery plugin. Tipue Search is open source and released under the MIT License, which means it's free for both commercial and non-commercial use. Tipue Search is responsive and works on all reasonably modern browsers.", "tags": "JavaScript", "loc": "http://www.tipue.com/search"},
      {"title": "Tipue Search Static mode demo", "text": "This is a demo of Tipue Search Static mode.", "tags": "", "loc": "http://www.tipue.com/search/demos/static"},
@@ -8,6 +9,3 @@ var tipuesearch = {"pages": [
      {"title": "Support plans", "text": "Stuck? We offer a range of flexible support plans for our jQuery plugins.", "tags": "", "loc": "http://www.tipue.com/support"},
      {"title": "About Tipue", "text": "Tipue is a small web development studio based in North London. We've been around for over a decade. We like Perl, MySQL and jQuery.", "tags": "", "loc": "http://www.tipue.com/about"}
 ]};
-
-
-

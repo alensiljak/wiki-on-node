@@ -1,0 +1,40 @@
+<% //	public is the JSON object that contains all the files %>
+
+<%
+	var tipuesearch = {"pages": []};
+
+	function getTitles(root){
+	    for(var name in root) {
+	    	console.log(root + " " + name);
+
+	    	var value = root[name];
+			var title = {
+	    		"title": "", 
+	    		"text": "",
+	    		"tags": "",
+	    		"loc": ""
+	    	};
+
+	    	if(typeof(value) === "object"){
+	    		// directory
+	    		title.title = name;
+	    		title.loc = root + current.source;
+
+	    		// get children
+	    		getTitles(value);
+	    	}
+	    	
+	    	if(typeof(value) === "string"){
+	    		// file
+	    		title.title = value;
+	    		title.loc = current.source;
+	    	}
+
+	    	tipuesearch.pages.push(title);
+	    };
+    }
+
+    getTitles(public);
+%>
+<% // JSON.stringify(public) %>
+<%- JSON.stringify(tipuesearch) %>
